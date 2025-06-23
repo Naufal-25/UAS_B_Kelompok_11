@@ -8,5 +8,5 @@ class KueKering(Produk):
         print(f"Kode: {self.kode}")
         print(f"Bahan Utama: {self.bahan}")
         print(f"Produk Produksi: {self.produk_produksi}")
-        print(f"Biaya Produksi: Rp {self.biaya_produksi:,.2f}")
-        print(f"Harga Jual: Rp {self.harga:,.2f}")
+        print(f"Biaya Produksi: Rp {self.biaya_produksi}")
+        print(f"Harga Jual: Rp {self.harga}")
