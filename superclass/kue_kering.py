@@ -1,4 +1,4 @@
-from superclass.produk import produk
+from superclass.produk import Produk
 
 class KueKering(Produk):
   def __init__(self, nama, kode, bahan, produk_produksi, biaya_produksi, harga):
