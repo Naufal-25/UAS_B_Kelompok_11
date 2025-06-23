@@ -1,5 +1,5 @@
 
-form superclass.kue_kering import KueKering
+from superclass.kue_kering import KueKering
 from interface.interface import Penopingan
 
 class ButterCookies(KueKering, Penopingan):
