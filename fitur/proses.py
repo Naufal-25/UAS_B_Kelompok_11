@@ -27,6 +27,7 @@ class Profit:
 class Proses:
     def __init__(self, produk, jumlah):
         self.produk = produk
+        self.jumlah = jumlah
     
     def run(self):
         print(f"\n=+= Memulai Proses Produksi: {self.produk.nama} =+=")
