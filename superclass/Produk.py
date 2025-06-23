@@ -5,8 +5,8 @@ class Produk(ABC):
         self.nama = nama
         self.kode = kode
         self.bahan = bahan
-        self.produk_produksi = produk
-        self.biaya_produksi = biaya
+        self.produk_produksi = produk_produksi
+        self.biaya_produksi = biaya_produksi
         self.harga = harga
 
       @abstractmethod
