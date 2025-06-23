@@ -1,8 +1,11 @@
+from superclass.produk import Produk
+from interface.interface import Pengembangan
+
 class RotiManis(Produk, Pengembangan):
-   def __init__(self, nama, kode, bahan, produk_produksi, biaya_produksi, harga):
+    def __init__(self, nama, kode, bahan, produk_produksi, biaya_produksi, harga):
         super().__init__(nama, kode, bahan, produk_produksi, biaya_produksi, harga)
 
-  def tampildata(self):
+    def tampildata(self):
         print(f"--- Data Roti Manis ---")
         print(f"Nama Produk: {self.nama}")
         print(f"Kode: {self.kode}")
