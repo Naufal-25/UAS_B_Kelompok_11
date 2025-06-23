@@ -4,9 +4,13 @@ class Profit:
         self.jumlah = jumlah
 
     def biaya_min(self):
-
-    def biaya_total(self):
+        return self.produk.biaya_produksi / self.produk.produk_produksi
     
-    def 
-        
-class Proses:
+    def biaya_total(self):
+        return self.biaya_min() * self.jumlah
+
+    def harga_total(self):
+        return self.produk.harga * self.jumlah
+    
+    def profit(self):
+        return self.biaya_total - self.harga_total

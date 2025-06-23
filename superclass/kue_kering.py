@@ -4,7 +4,7 @@ class KueKering(Produk):
       def __init__(self, nama, kode, bahan, produk_produksi, biaya_produksi, harga):
         super().__init__(nama, kode, bahan, produk_produksi, biaya_produksi, harga)
 
-      def tampildata(self):
+      def tampil_data(self):
         print(f"--- Data Kue Kering ---")
         print(f"Nama Produk: {self.nama}")
         print(f"Kode: {self.kode}")
