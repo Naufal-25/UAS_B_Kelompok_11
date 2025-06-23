@@ -1,7 +1,7 @@
 import time
 
 class Profit:
-    def __init__(self, produk):
+    def __init__(self, produk, jumlah):
         self.produk = produk
         self.jumlah = jumlah
 
