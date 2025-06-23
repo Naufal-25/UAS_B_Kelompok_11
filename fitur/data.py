@@ -15,6 +15,6 @@ class Print:
         if not self.produk:
             print ("[[ KOSONG ]]")
         else:
-            for i, crew in enumerate(self.produk, start=1):
+            for i, r in enumerate(self.produk, start=1):
                 print(f"\nProduk {i}:")
-                crew.tampildata()
+                r.tampildata()
