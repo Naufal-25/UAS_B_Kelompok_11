@@ -1,54 +1,105 @@
-from kelas.butter_cookies import ButterCookies
-from kelas.croissant import Croissant
-from kelas.muffin import Muffin
-from kelas.roti_manis import RotiManis
-
 from fitur.data import Data
 from fitur.print import Print
 from fitur.proses import Proses
 from fitur.profit import Profit
-from example import get_sample_data
 
+from kelas.roti_manis import RotiManis
+from kelas.muffin import Muffin
+from kelas.croissant import Croissant
+from kelas.butter_cookies import ButterCookies
+
+def input_produk():
+    print("\n=== Input Produk Baru ===")
+    nama = input("Nama Produk: ").strip()
+    kode = input("Kode Produk: ").strip()
+    bahan = input("Bahan Utama: ").strip()
+
+    try:
+        produksi = int(input("Jumlah Produk yang Dihasilkan per Batch: "))
+        biaya = int(input("Total Biaya Produksi (Rp): "))
+        harga = int(input("Harga Jual per pcs (Rp): "))
+    except ValueError:
+        print("Input angka tidak valid.")
+        return None
+
+    print("\nPilih Jenis Produk:")
+    print("1. Roti Manis")
+    print("2. Muffin")
+    print("3. Croissant")
+    print("4. Butter Cookies")
+
+    jenis = input("Masukkan pilihan (1-4): ").strip()
+    if jenis == "1":
+        return RotiManis(nama, kode, bahan, produksi, biaya, harga)
+    elif jenis == "2":
+        return Muffin(nama, kode, bahan, produksi, biaya, harga)
+    elif jenis == "3":
+        return Croissant(nama, kode, bahan, produksi, biaya, harga)
+    elif jenis == "4":
+        return ButterCookies(nama, kode, bahan, produksi, biaya, harga)
+    else:
+        print("Jenis produk tidak dikenali.")
+        return None
 
 def main():
     data = Data()
-    for item in get_sample_data():
-        data.tambah(item)
     
-    data.tambah(Croissant("Croissant Cokelat", "C001", "Tepung, Cokelat, Ragi", 100, 300000, 10000))
-    data.tambah(Muffin("Muffin Blueberry", "M002", "Tepung, Blueberry, Telur", 120, 240000, 8000))
-    data.tambah(RotiManis("Roti Manis Keju", "R003", "Tepung, Keju, Ragi", 150, 270000, 9000))
-    data.tambah(ButterCookies("Butter Cookies Vanilla", "B004", "Tepung, Mentega, Gula", 200, 180000, 7000))
-
     while True:
-        print("\n===== SISTEM PRODUKSI TOKO ROTI =====")
-        print("1. Lihat Data Produk")
-        print("2. Produksi Produk")
-        print("3. Keluar")
-        pilihan = input("Pilih menu (1-3): ")
+        print("\n=== MENU UTAMA TOKO ROTI ===")
+        print("1. Tambah Produk")
+        print("2. Lihat Semua Produk")
+        print("3. Proses Produksi")
+        print("4. Hitung Profit")
+        print("5. Keluar")
 
+        pilihan = input("Pilih menu: ").strip()
+        
         if pilihan == "1":
-            Print(data.produk).tampil()
+            produk_baru = input_produk()
+            if produk_baru:
+                data.tambah(produk_baru)
+                print("Produk berhasil ditambahkan.")
 
         elif pilihan == "2":
-            Print(data.produk).tampil()
-            try:
-                pilih = int(input("\nMasukkan nomor produk: ")) - 1
-                if pilih < 0 or pilih >= len(data.produk):
-                    print("Pilihan tidak valid.")
-                    continue
-                jumlah = int(input("Masukkan jumlah produk yang akan diproduksi: "))
-                produk_dipilih = data.produk[pilih]
-                proses = Proses(produk_dipilih, jumlah)
-                proses.run()
-                hasil = Profit(produk_dipilih, jumlah)
-                hasil.print_profit()
-            except ValueError:
-                print("Input harus berupa angka.")
+            print("\n=== Data Semua Produk ===")
+            tampilkan = Print(data.produk)
+            tampilkan.tampil()
 
         elif pilihan == "3":
-            print("Terima kasih, program selesai.")
+            if not data.produk:
+                print("Belum ada produk. Silakan tambah dulu.")
+                continue
+
+            for i, p in enumerate(data.produk, start=1):
+                print(f"{i}. {p.nama}")
+            try:
+                index = int(input("Pilih produk untuk diproses: ")) - 1
+                jumlah = int(input("Masukkan jumlah produksi: "))
+                proses = Proses(data.produk[index], jumlah)
+                proses.run()
+            except (ValueError, IndexError):
+                print("Input tidak valid.")
+
+        elif pilihan == "4":
+            if not data.produk:
+                print("Belum ada produk.")
+                continue
+            for i, p in enumerate(data.produk, start=1):
+                print(f"{i}. {p.nama}")
+            try:
+                index = int(input("Pilih produk untuk dihitung profit-nya: ")) - 1
+                jumlah = int(input("Jumlah produksi (pcs): "))
+                keuntungan = Profit(data.produk[index], jumlah)
+                keuntungan.print_profit()
+            except (ValueError, IndexError):
+                print("Input tidak valid.")
+
+        elif pilihan == "5":
+            print("Terima kasih. Program selesai.")
             break
 
         else:
-            print("Menu tidak tersedia.")
+            print("Pilihan tidak valid.")
+
+if __name__ == "__main__":
+    main()
