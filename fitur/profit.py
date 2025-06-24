@@ -16,7 +16,7 @@ class Profit:
         return self.harga_total() - self.biaya_total()
     
     def print_profit(self):
-        print(f"Harga produksi satuan dari '{self.produk.nama}' adalah: Rp {self.biaya_min()}")
-        print(f"Harga total produksi sebanyak {self.jumlah} pcs adalah: Rp {self.biaya_total()}")
-        print(f"Harga total jual sebanyak {self.jumlah} pcs adalah: Rp {self.harga_total()}")
-        print(f"Profit untuk {self.jumlah} pcs adalah: Rp {self.profit()}")
+        print(f"Harga produksi satuan dari '{self.produk.nama}' adalah: Rp {self.biaya_min():,.0f}")
+        print(f"Harga total produksi sebanyak {self.jumlah} pcs adalah: Rp {self.biaya_total():,.0f}")
+        print(f"Harga total jual sebanyak {self.jumlah} pcs adalah: Rp {self.harga_total():,.0f}")
+        print(f"Profit untuk {self.jumlah} pcs adalah: Rp {self.profit():,.0f}")
