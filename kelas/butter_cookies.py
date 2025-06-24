@@ -1,4 +1,5 @@
 from superclass.kue_kering import KueKering
+from interface.interface import Penopingan
 
 class ButterCookies(KueKering):
     def __init__(self, nama, kode, bahan, produk_produksi, biaya_produksi, harga):
