@@ -12,6 +12,3 @@ class KueKering(Produk):
         print(f"Produk Produksi: {self.produk_produksi}")
         print(f"Biaya Produksi: Rp {self.biaya_produksi}")
         print(f"Harga Jual: Rp {self.harga}")
-      
-      def topping(self):
-         pass
