@@ -6,10 +6,10 @@ Wava Al Qudsi [[ K3524084 ]]                   Bertugas dalam pembuatan class 
 
 Fitur Utama
 
-- Menampilkan daftar produk roti dan kue
-- Menambahkan produk baru (Croissant, Muffin, Roti Manis, Butter Cookies)
-- Simulasi proses produksi (adon, kembang, panggang, topping)
-- Perhitungan estimasi profit berdasarkan biaya dan harga jual
+Menampilkan daftar produk roti dan kue
+Menambahkan produk baru (Croissant, Muffin, Roti Manis, Butter Cookies)
+Simulasi proses produksi (adon, kembang, panggang, topping)
+Perhitungan estimasi profit berdasarkan biaya dan harga jual
 
 Struktur Program
 
