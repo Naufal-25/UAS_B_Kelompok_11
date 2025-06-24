@@ -7,12 +7,14 @@ from fitur.data import Data
 from fitur.print import Print
 from fitur.proses import Proses
 from fitur.profit import Profit
-
+from example import get_sample_data
 
 
 def main():
     data = Data()
-
+    for item in get_sample_data():
+        data.tambah(item)
+    
     data.tambah(Croissant("Croissant Cokelat", "C001", "Tepung, Cokelat, Ragi", 100, 300000, 10000))
     data.tambah(Muffin("Muffin Blueberry", "M002", "Tepung, Blueberry, Telur", 120, 240000, 8000))
     data.tambah(RotiManis("Roti Manis Keju", "R003", "Tepung, Keju, Ragi", 150, 270000, 9000))
