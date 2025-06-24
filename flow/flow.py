@@ -3,9 +3,10 @@ from kelas.croissant import Croissant
 from kelas.muffin import Muffin
 from kelas.roti_manis import RotiManis
 
-from fitur.data import Data, Print
+from fitur.data import Data
+from fitur.print import Print
 from fitur.proses import Proses
-from fitur.proses import Profit
+from fitur.profit import Profit
 
 
 
