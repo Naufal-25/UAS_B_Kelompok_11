@@ -13,7 +13,7 @@ class Profit:
         return self.produk.harga * self.jumlah
     
     def profit(self):
-        return self.biaya_total() - self.harga_total()
+        return self.harga_total() - self.biaya_total()
     
     def print_profit(self):
         print(f"Harga produksi satuan dari '{self.produk.nama}' adalah: Rp {self.biaya_min()}")

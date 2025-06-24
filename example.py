@@ -5,8 +5,8 @@ from kelas.butter_cookies import ButterCookies
 
 def get_sample_data():
     return [
-        Croissant("Croissant Classic", "C002", "Tepung, Air, Susu, Gula, Ragi, Garam, Mentega, Telur", 15, 60000, 5000),
+        Croissant("Croissant Classic", "C002", "Tepung, Air, Susu, Gula, Ragi, Garam, Mentega, Telur", 15, 60000, 7000),
         Muffin("Muffin Classic", "M003", "Tepung, Gula, Garam, Baking Powder, Telur, Margarin, Vanili", 15, 30000, 4000),
-        RotiManis("Roti Manis Susu", "R004", "Tepung, Ragi, Gula, Telur, Susu, Mentega, Garam", 20, 50000, 2500),
+        RotiManis("Roti Manis Susu", "R004", "Tepung, Ragi, Gula, Telur, Susu, Mentega, Garam", 20, 50000, 3000),
         ButterCookies("Butter Cookies Chocochip", "B005", "Tepung, Mentega, Gula, Telur, Vanilla Extract, Garam, Choccochips", 15, 30000, 4000)
     ]
