@@ -8,6 +8,8 @@ from kelas.muffin import Muffin
 from kelas.croissant import Croissant
 from kelas.butter_cookies import ButterCookies
 
+from example import get_sample_data
+
 def input_produk():
     print("\n=== Input Produk Baru ===")
     nama = input("Nama Produk: ").strip()
@@ -43,7 +45,9 @@ def input_produk():
 
 def main():
     data = Data()
-    
+    for item in get_sample_data():
+        data.tambah(item)
+
     while True:
         print("\n=== MENU UTAMA TOKO ROTI ===")
         print("1. Tambah Produk")
