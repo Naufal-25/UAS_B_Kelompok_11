@@ -13,22 +13,22 @@ Fitur Utama
 
 Struktur Program
 
-├── main.py # Titik eksekusi utama
-├── example.py # Data sample produk
-├── interface/
-│ └── interface.py # Interface untuk produk dengan topping dan pengembangan
-├── superclass/
-│ ├── produk.py # Abstract class Produk
-│ └── kue_kering.py # Subclass Produk untuk jenis kue kering
-├── kelas/
-│ ├── croissant.py
-│ ├── muffin.py
-│ ├── roti_manis.py
-│ └── butter_cookies.py
-├── fitur/
-│ ├── data.py # Manajemen data produk
-│ ├── print.py # Fitur tampilan data produk
-│ ├── proses.py # Simulasi proses produksi
-│ └── profit.py # Kalkulasi keuntungan
-└── flow/
-└── flow.py # Logika menu dan interaksi pengguna
+main.py # Titik eksekusi utama
+example.py # Data sample produk
+interface/
+    interface.py # Interface untuk produk dengan topping dan pengembangan
+superclass/
+    produk.py # Abstract class Produk
+    kue_kering.py # Subclass Produk untuk jenis kue kering
+kelas/
+    croissant.py
+    muffin.py
+    roti_manis.py
+    butter_cookies.py
+fitur/
+    data.py # Manajemen data produk
+    print.py # Fitur tampilan data produk
+    proses.py # Simulasi proses produksi
+    profit.py # Kalkulasi keuntungan
+flow/
+    flow.py # Logika menu dan interaksi pengguna
